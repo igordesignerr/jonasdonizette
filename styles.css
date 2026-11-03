@@ -366,6 +366,59 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
   .pill-linha { justify-content: center !important; }
 }
 
+/* ===== Páginas de Opinião ===== */
+.pagina-cab { padding: 72px 0 8px; }
+.pagina-cab .titulo { margin-bottom: 16px; }
+.pagina-lede { color: var(--tinta-suave); max-width: 52ch; margin: 0; }
+.secao-topo-0 { padding-top: 48px; }
+.chip-tag { display: inline-block; padding: 4px 12px; border-radius: 999px; background: rgba(55,139,145,.14); color: var(--petroleo); font-family: var(--f-titulo); font-weight: 600; font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; }
+
+.grade-artigos { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+.card-artigo { display: flex; flex-direction: column; text-decoration: none; color: inherit; background: var(--cinza); border-radius: var(--r-grande); overflow: hidden; transition: transform .6s var(--suave), box-shadow .6s var(--suave); }
+.card-artigo-capa { display: block; aspect-ratio: 4 / 3; overflow: hidden; }
+.card-artigo-capa img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--suave); }
+.card-artigo-txt { display: flex; flex-direction: column; gap: 12px; padding: 28px; }
+.card-artigo-topo { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.card-artigo-topo small, .card-artigo-txt small { color: var(--tinta-suave); font-size: .9rem; }
+.card-artigo strong { font-family: var(--f-titulo); font-weight: 600; font-size: clamp(1.35rem, 2.4vw, 1.8rem); line-height: 1.2; color: var(--petroleo-escuro); }
+.card-artigo-resumo { color: var(--tinta-suave); }
+@media (hover: hover) {
+  .card-artigo:hover { transform: translateY(-6px); box-shadow: 0 34px 50px -30px rgba(7,42,50,.45); }
+  .card-artigo:hover .card-artigo-capa img { transform: scale(1.05); }
+}
+
+.artigo { padding: 40px 0 0; }
+.artigo-largura { max-width: 860px; }
+.voltar { display: inline-flex; gap: 8px; font-family: var(--f-titulo); font-weight: 600; color: var(--verde); text-decoration: none; margin-bottom: 24px; }
+.artigo-capa { margin: 0 0 40px; border-radius: var(--r-grande); overflow: hidden; aspect-ratio: 4 / 3; background: var(--cinza); }
+.artigo-capa img { width: 100%; height: 100%; object-fit: cover; }
+.artigo-cab h1 { font-family: var(--f-titulo); font-weight: 600; font-size: clamp(2rem, 4.6vw, 3.4rem); line-height: 1.08; letter-spacing: -.02em; color: var(--petroleo-escuro); margin: 16px 0 14px; }
+.artigo-meta { color: var(--tinta-suave); margin: 0 0 32px; padding-bottom: 28px; border-bottom: 1px solid var(--linha); }
+.artigo-corpo p { font-size: 1.2rem; line-height: 1.75; color: var(--tinta); margin: 0 0 1.3em; max-width: 68ch; }
+.artigo-corpo p:first-child::first-letter { float: left; font-family: var(--f-nome); font-weight: 900; font-size: 4.6em; line-height: .8; margin: .08em .1em 0 0; color: var(--laranja); }
+.artigo-fonte { font-size: .9rem; color: var(--tinta-suave); padding: 18px 20px; border-radius: var(--r); background: var(--cinza); margin: 32px 0; }
+.artigo-fonte a { color: var(--petroleo); font-weight: 700; }
+.partilha { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; padding: 24px 0 8px; border-top: 1px solid var(--linha); }
+.partilha span { font-family: var(--f-titulo); font-weight: 600; font-size: .85rem; letter-spacing: .14em; text-transform: uppercase; margin-right: 6px; }
+.partilha a, .partilha button { display: grid; place-items: center; width: 46px; height: 46px; border-radius: 50%; border: 1.5px solid var(--linha); background: var(--branco); color: var(--petroleo-escuro); cursor: pointer; transition: background .3s, color .3s, border-color .3s; }
+.partilha a:hover, .partilha button:hover { background: var(--laranja); border-color: var(--laranja); }
+.partilha svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; }
+.partilha .cheio { fill: currentColor; stroke: none; }
+.partilha .copiado { background: var(--petroleo); color: var(--branco); border-color: var(--petroleo); }
+.leia-tambem { padding: 64px 0 104px; }
+.card-artigo-linha { flex-direction: row; }
+.card-artigo-linha .card-artigo-capa { width: 38%; flex: none; }
+.card-artigo-linha .card-artigo-txt { justify-content: center; }
+@media (max-width: 900px) {
+  .grade-artigos { grid-template-columns: 1fr; }
+  .pagina-cab { padding-top: 40px; }
+  .artigo-capa { margin-bottom: 28px; border-radius: var(--r); }
+  .artigo-corpo p { font-size: 1.125rem; }
+  .card-artigo-linha { flex-direction: column; }
+  .card-artigo-linha .card-artigo-capa { width: 100%; }
+  .card-artigo-txt { padding: 22px; }
+}
+
 /* ===== Efeitos ===== */
 /* 1. máquina de escrever: o texto ainda não escrito fica invisível, mas ocupa o espaço (nada pula) */
 .escr-resto { visibility: hidden; }

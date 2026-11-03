@@ -127,6 +127,27 @@
     });
   }
 
+  // Botões de compartilhar (só abrem o link da rede; nenhum dado é coletado)
+  document.querySelectorAll('.partilha').forEach(function (box) {
+    var url = encodeURIComponent(location.href), tit = encodeURIComponent(box.dataset.titulo || document.title);
+    var links = {
+      whatsapp: 'https://wa.me/?text=' + tit + '%20' + url,
+      facebook: 'https://www.facebook.com/sharer/sharer.php?u=' + url,
+      x: 'https://twitter.com/intent/tweet?text=' + tit + '&url=' + url
+    };
+    box.querySelectorAll('[data-rede]').forEach(function (el) {
+      var rede = el.dataset.rede;
+      if (links[rede]) { el.href = links[rede]; el.target = '_blank'; el.rel = 'noopener'; return; }
+      el.addEventListener('click', function () {
+        if (!navigator.clipboard) return;
+        navigator.clipboard.writeText(location.href).then(function () {
+          el.classList.add('copiado'); el.setAttribute('aria-label', 'Link copiado');
+          setTimeout(function () { el.classList.remove('copiado'); el.setAttribute('aria-label', 'Copiar link'); }, 2000);
+        });
+      });
+    });
+  });
+
   // Entradas suaves ao rolar
   var itens = document.querySelectorAll('.reveal');
   var numeros = document.querySelectorAll('[data-conta]');

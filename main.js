@@ -77,9 +77,11 @@
 
   // 4. Selo de texto circular: monta as letras em volta do círculo
   var selos = document.querySelectorAll('[data-circular]');
-  selos.forEach(function (selo) {
+  // Letras distribuídas por igual em volta do círculo
+  function montaSelo(selo) {
     var anel = selo.querySelector('.selo-anel');
     var letras = Array.from(selo.dataset.circular);
+    anel.innerHTML = '';
     letras.forEach(function (l, i) {
       var sp = document.createElement('span');
       sp.className = 'selo-letra';
@@ -87,7 +89,8 @@
       sp.style.transform = 'rotate(' + (360 / letras.length) * i + 'deg)';
       anel.appendChild(sp);
     });
-  });
+  }
+  selos.forEach(montaSelo);
   if (!semMovimento) {
     selos.forEach(function (selo) {
       var anel = selo.querySelector('.selo-anel'), tilt = selo.querySelector('.selo-tilt');

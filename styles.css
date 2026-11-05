@@ -106,7 +106,7 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
 
 .hero-foto { position: relative; display: flex; align-items: flex-end; justify-content: center; margin-top: -136px; margin-left: -8%; }
 .hero-foto img { position: relative; width: min(128%, 800px); max-width: none; height: auto; filter: drop-shadow(0 30px 50px rgba(7,42,50,.22)); }
-.hero-redes { position: absolute; right: 24px; top: 130px; display: flex; flex-direction: column; gap: 10px; z-index: 3; }
+.hero-redes { position: absolute; right: 24px; top: 160px; display: flex; flex-direction: column; gap: 10px; z-index: 3; }
 .hero-redes a { display: grid; place-items: center; width: 46px; height: 46px; border-radius: 50%; background: rgba(255,255,255,.55); border: 1px solid rgba(255,255,255,.7); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); color: var(--petroleo-escuro); transition: background .2s; }
 .hero-redes a:hover { background: var(--laranja); }
 .hero-redes svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; }
@@ -216,7 +216,7 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
   /* foto "estourada": ele cresce e a cabeça sai por cima do card, como na hero */
   .traj-foto { overflow: visible; padding-top: 0; }
   .traj-foto img { width: 100%; max-width: none; margin-top: -70px; border-bottom-left-radius: var(--r-grande); border-bottom-right-radius: var(--r-grande); }
-  .traj-foto .selo { top: -18px; right: -18px; }
+  .traj-foto .selo { top: 28px; right: 24px; }
 }
 .vidro-info {
   position: absolute; z-index: 3; transform: translateZ(0); left: 16px; right: 16px; bottom: 16px; padding: 18px 20px; border-radius: var(--r);
@@ -452,13 +452,14 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
 
   /* 3. inclinação 3D que segue o mouse (ângulo controlado pelo JS) */
   [data-tilt-grupo] { perspective: 600px; }
-  [data-tilt-grupo] > a {
+  .hero-redes li { perspective: 300px; }
+  [data-tilt-grupo] > a, [data-tilt-grupo] > li > a {
     transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateZ(0);
     box-shadow: var(--sx, 0px) var(--sy, 6px) 18px -8px rgba(7,42,50,.35);
     transition: transform .35s var(--suave), box-shadow .35s var(--suave);
     will-change: transform;
   }
-  [data-tilt-grupo] > a.inclinando { transition-duration: .08s; }
+  [data-tilt-grupo] > a.inclinando, [data-tilt-grupo] > li > a.inclinando { transition-duration: .08s; }
   .hero-acoes[data-tilt-grupo] > a:hover { transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(-2px); }
 }
 

@@ -56,9 +56,9 @@
     })();
   }
 
-  // 3. Inclinação 3D nos botões da hero (só com mouse)
+  // 3. Inclinação 3D nos botões e ícones de redes da hero (só com mouse)
   if (!semMovimento && window.matchMedia('(hover: hover)').matches) {
-    document.querySelectorAll('[data-tilt-grupo] > a').forEach(function (bt) {
+    document.querySelectorAll('[data-tilt-grupo] > a, [data-tilt-grupo] > li > a').forEach(function (bt) {
       bt.addEventListener('mousemove', function (e) {
         var r = bt.getBoundingClientRect();
         var x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;

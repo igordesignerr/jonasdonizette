@@ -211,6 +211,13 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
 .traj-foto img { width: 86%; height: auto; object-fit: contain; }
 .blob-d { width: 420px; height: 420px; left: 50%; top: 45%; transform: translate(-50%,-50%); background: var(--verde); opacity: .6; filter: blur(80px); }
 .traj-foto img { position: relative; }
+.traj-fundo { position: absolute; inset: 0; z-index: -1; border-radius: inherit; overflow: hidden; }
+@media (min-width: 901px) {
+  /* foto "estourada": ele cresce e a cabeça sai por cima do card, como na hero */
+  .traj-foto { overflow: visible; padding-top: 0; }
+  .traj-foto img { width: 100%; max-width: none; margin-top: -70px; border-bottom-left-radius: var(--r-grande); border-bottom-right-radius: var(--r-grande); }
+  .traj-foto .selo { top: -18px; right: -18px; }
+}
 .vidro-info {
   position: absolute; z-index: 3; transform: translateZ(0); left: 16px; right: 16px; bottom: 16px; padding: 18px 20px; border-radius: var(--r);
   background: rgba(255,255,255,.86); border: 1px solid rgba(255,255,255,.95); color: var(--petroleo-escuro);

@@ -94,18 +94,18 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
 .hero { padding: 24px 0 24px; }
 .hero-card {
   position: relative; background: var(--cinza); border-radius: var(--r-grande); isolation: isolate;
-  display: grid; grid-template-columns: 1.1fr 1fr; min-height: 600px; margin-top: 90px;
+  display: grid; grid-template-columns: 1.1fr 1fr; min-height: 600px; margin-top: 56px;
 }
-.hero-texto { padding: 64px 0 64px 64px; position: relative; z-index: 2; }
-.hero-nome { font-family: var(--f-nome); font-weight: 900; text-transform: uppercase; line-height: .84; margin: 0; color: var(--petroleo-escuro); }
+.hero-texto { padding: 44px 0 48px 64px; position: relative; z-index: 2; }
+.hero-nome { font-family: var(--f-nome); font-weight: 900; text-transform: uppercase; line-height: .84; margin: 0; color: var(--petroleo); } /* #00505b: o 'cinza' da marca */
 .hero-nome span { display: block; font-size: clamp(5rem, 13.5vw, 13.5rem); }
 .hero-nome span + span { color: var(--laranja); }
 .hero-assinatura { font-family: var(--f-titulo); font-weight: 600; font-size: 1.1rem; letter-spacing: .14em; text-transform: uppercase; color: var(--verde); margin: 26px 0 0; }
 .hero-lede { max-width: 36ch; color: var(--tinta-suave); margin: 0 0 30px; }
 .hero-acoes { display: flex; flex-wrap: wrap; gap: 12px; }
 
-.hero-foto { position: relative; display: flex; align-items: flex-end; justify-content: center; margin-top: -90px; }
-.hero-foto img { position: relative; width: min(112%, 680px); max-width: none; height: auto; filter: drop-shadow(0 30px 50px rgba(7,42,50,.22)); }
+.hero-foto { position: relative; display: flex; align-items: flex-end; justify-content: center; margin-top: -136px; margin-left: -8%; }
+.hero-foto img { position: relative; width: min(128%, 800px); max-width: none; height: auto; filter: drop-shadow(0 30px 50px rgba(7,42,50,.22)); }
 .hero-redes { position: absolute; right: 24px; top: 130px; display: flex; flex-direction: column; gap: 10px; z-index: 3; }
 .hero-redes a { display: grid; place-items: center; width: 46px; height: 46px; border-radius: 50%; background: rgba(255,255,255,.55); border: 1px solid rgba(255,255,255,.7); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); color: var(--petroleo-escuro); transition: background .2s; }
 .hero-redes a:hover { background: var(--laranja); }
@@ -316,9 +316,8 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
   .hero-card { grid-template-columns: 1fr; min-height: 0; margin-top: 0; overflow: hidden; }
   .hero-texto { padding: 36px 24px 8px; }
   .hero-nome span { font-size: clamp(4.4rem, 30vw, 10rem); }
-  .hero-foto { min-height: 420px; }
-  .hero-foto img { width: 100%; margin-top: 0; filter: none; }
-  .hero-foto { margin-top: 0; }
+  .hero-foto { min-height: 420px; margin: -24px 0 0; }
+  .hero-foto img { width: 124%; margin-top: 0; filter: none; }
   .hero-redes { top: 16px; right: 16px; }
   .vidro { right: 16px; bottom: 16px; left: 16px; width: auto; }
 
